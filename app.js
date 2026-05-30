@@ -31,7 +31,7 @@ let scale = 0.2;
 let animando = false;
 let galeriaActiva = false;
 
-const musica = new Audio('cancion.mp3');
+const musica = new Audio('https://res.cloudinary.com/dwvfqkfzp/video/upload/q_auto/f_auto/v1780109740/cancion_bxf5lu.mp3');
 musica.loop = true;
 musica.volume = VOLUMEN_MUSICA;
 musica.preload = 'auto';
