@@ -5,21 +5,18 @@
 const fotos = [
     
     'https://res.cloudinary.com/dwvfqkfzp/image/upload/f_auto,q_auto/IMG_2177_x7pp5f',
-    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_2189.jpg',
-    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_2200.jpg',
-    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_2205.jpg',
-    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_2212.jpg',
-    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_2230.jpg',
-    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_2277.jpg',
-    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_2623.jpg',
-    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_3099.jpg',
-    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_3230.jpg',
-    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_3236.jpg',
-    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_3427.jpg',
-    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_3762.jpg',
-    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_3946.jpg',
-    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_3959.jpg',
-    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_3967.jpg'
+    'https://res.cloudinary.com/dwvfqkfzp/image/upload/q_auto/f_auto/v1780109000/IMG_2189_awfhba.jpg',
+    'https://res.cloudinary.com/dwvfqkfzp/image/upload/q_auto/f_auto/v1780109009/IMG_2212_vteyzm.jpg',
+    'https://res.cloudinary.com/dwvfqkfzp/image/upload/q_auto/f_auto/v1780109010/IMG_2205_oqfpsg.jpg',
+    'https://res.cloudinary.com/dwvfqkfzp/image/upload/q_auto/f_auto/v1780109038/IMG_3762_awk6yn.jpg',
+    'https://res.cloudinary.com/dwvfqkfzp/image/upload/q_auto/f_auto/v1780109041/IMG_3427_f5xxst.jpg',
+    'https://res.cloudinary.com/dwvfqkfzp/image/upload/q_auto/f_auto/v1780109047/IMG_3946_df1ffq.jpg',
+    'https://res.cloudinary.com/dwvfqkfzp/image/upload/q_auto/f_auto/v1780109053/IMG_3236_cb89au.jpg',
+    'https://res.cloudinary.com/dwvfqkfzp/image/upload/q_auto/f_auto/v1780109054/IMG_3967_yvnugb.jpg',
+    'https://res.cloudinary.com/dwvfqkfzp/image/upload/q_auto/f_auto/v1780109055/IMG_3943_nj4l8o.jpg',
+    'https://res.cloudinary.com/dwvfqkfzp/image/upload/q_auto/f_auto/v1780109055/IMG_3959_bevc8u.jpg',
+    'https://res.cloudinary.com/dwvfqkfzp/image/upload/q_auto/f_auto/v1780109066/IMG_2623_qplpda.jpg',
+    'https://res.cloudinary.com/dwvfqkfzp/image/upload/q_auto/f_auto/v1780109068/IMG_3230_cz3ugf.jpg',
 ];
 
 // =========================
