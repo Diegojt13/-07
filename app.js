@@ -37,7 +37,7 @@ let galleryInterval = null;
 let scale = 0.2;
 let animando = false;
 
-const musica = new Audio('musica/cancion.mp3');
+const musica = new Audio('cancion.mp3');
 
 musica.loop = true;
 musica.volume = 0.4;
