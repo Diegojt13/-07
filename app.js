@@ -20,7 +20,7 @@ const fotos = [
 // ⬆️⬆️⬆️ EDITA ARRIBA CON TUS ARCHIVOS ⬆️⬆️⬆️
 
 const TIEMPO_FOTOS = 15000;
-const CARPETA_FOTOS = 'fotos/';
+const CARPETA_FOTOS = ' ';
 const VOLUMEN_MUSICA = 0.4;
 
 const inicio = document.getElementById('inicio');
