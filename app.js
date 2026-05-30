@@ -1,22 +1,32 @@
-// ⬇️⬇️⬇️ EDITA ESTO CON TUS FOTOS REAL⬇️⬇️⬇️
+// =========================
+// FOTOS ONLINE
+// Reemplaza estas URLs por las tuyas
+// =========================
 const fotos = [
-    'IMG_2177.jpg',
-    'IMG_2189.jpg',
-    'IMG_2205.jpg',
-    'IMG_2212.jpg',
-    'IMG_2230.jpg',
-    'IMG_2623.jpg',
-    'IMG_3099.jpg',
-    'IMG_3230.jpg',
-    'IMG_3762.jpg',
-    'IMG_3946.jpg',
-    'IMG_3959.jpg',
-    'IMG_3967.jpg'
+    
+    'https://res.cloudinary.com/dwvfqkfzp/image/upload/f_auto,q_auto/IMG_2177_x7pp5f',
+    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_2189.jpg',
+    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_2200.jpg',
+    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_2205.jpg',
+    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_2212.jpg',
+    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_2230.jpg',
+    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_2277.jpg',
+    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_2623.jpg',
+    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_3099.jpg',
+    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_3230.jpg',
+    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_3236.jpg',
+    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_3427.jpg',
+    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_3762.jpg',
+    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_3946.jpg',
+    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_3959.jpg',
+    'https://res.cloudinary.com/TU_CLOUD_NAME/image/upload/v1/IMG_3967.jpg'
 ];
-// ⬆️⬆️⬆️ EDITA ARRIBA CON TUS ARCHIVOS ⬆️⬆️⬆️
 
-const CARPETA_FOTOS = ' ';
+// =========================
+// CONFIGURACIÓN
+// =========================
 const VOLUMEN_MUSICA = 0.4;
+const TIEMPO_TRANSICION = 350;
 
 const inicio = document.getElementById('inicio');
 const corazonContainer = document.getElementById('corazon-container');
@@ -32,7 +42,7 @@ let scale = 0.2;
 let animando = false;
 let galeriaActiva = false;
 
-const musica = new Audio('cancion.mp3');
+const musica = new Audio('musica/cancion.mp3');
 musica.loop = true;
 musica.volume = VOLUMEN_MUSICA;
 
@@ -79,8 +89,7 @@ function showPhoto(index) {
     if (animando || !galeriaActiva) return;
     animando = true;
 
-    const photo = fotos[index];
-    const src = `${CARPETA_FOTOS}${photo}`;
+    const src = fotos[index];
 
     fotoPrincipal.classList.remove('show');
     fotoPrincipal.classList.add('hide');
@@ -98,16 +107,12 @@ function showPhoto(index) {
         };
 
         fotoPrincipal.src = src;
-    }, 350);
+    }, TIEMPO_TRANSICION);
 }
 
-function nextPhoto() {
-    if (!galeriaActiva || animando) return;
+// Cambiar foto con click en cualquier parte
+galeria.addEventListener('click', () => {
+    if (!galeriaActiva) return;
     currentPhotoIndex = (currentPhotoIndex + 1) % fotos.length;
     showPhoto(currentPhotoIndex);
-}
-
-// Click en cualquier parte de la galería para cambiar foto
-galeria.addEventListener('click', () => {
-    nextPhoto();
 });
