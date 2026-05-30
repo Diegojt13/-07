@@ -15,8 +15,7 @@ const fotos = [
 ];
 // ⬆️⬆️⬆️ EDITA ARRIBA CON TUS ARCHIVOS ⬆️⬆️⬆️
 
-const TIEMPO_FOTOS = 1000;
-const CARPETA_FOTOS = ' ';
+const CARPETA_FOTOS = 'fotos/';
 const VOLUMEN_MUSICA = 0.4;
 
 const inicio = document.getElementById('inicio');
@@ -29,32 +28,23 @@ const mensajeError = document.getElementById('mensaje-error');
 const indicador = document.getElementById('indicador');
 
 let currentPhotoIndex = 0;
-let galleryInterval = null;
 let scale = 0.2;
 let animando = false;
+let galeriaActiva = false;
 
-const musica = new Audio('cancion.mp3');
-
+const musica = new Audio('musica/cancion.mp3');
 musica.loop = true;
-musica.volume = 0.4;
+musica.volume = VOLUMEN_MUSICA;
 
 inicio.addEventListener('click', async () => {
-
     try {
-
         await musica.play();
-
     } catch (e) {
-
-        console.log(
-            'Audio bloqueado por el navegador hasta otra interacción.'
-        );
+        console.log('Audio bloqueado por el navegador hasta otra interacción.');
     }
 
     inicio.classList.remove('active');
-
     corazonContainer.classList.add('active');
-
     startHeartAnimation();
 });
 
@@ -81,17 +71,12 @@ function startGallery() {
     }
 
     mensajeError.style.display = 'none';
+    galeriaActiva = true;
     showPhoto(0);
-
-    if (galleryInterval) clearInterval(galleryInterval);
-    galleryInterval = setInterval(() => {
-        currentPhotoIndex = (currentPhotoIndex + 1) % fotos.length;
-        showPhoto(currentPhotoIndex);
-    }, TIEMPO_FOTOS);
 }
 
 function showPhoto(index) {
-    if (animando) return;
+    if (animando || !galeriaActiva) return;
     animando = true;
 
     const photo = fotos[index];
@@ -115,3 +100,14 @@ function showPhoto(index) {
         fotoPrincipal.src = src;
     }, 350);
 }
+
+function nextPhoto() {
+    if (!galeriaActiva || animando) return;
+    currentPhotoIndex = (currentPhotoIndex + 1) % fotos.length;
+    showPhoto(currentPhotoIndex);
+}
+
+// Click en cualquier parte de la galería para cambiar foto
+galeria.addEventListener('click', () => {
+    nextPhoto();
+});
