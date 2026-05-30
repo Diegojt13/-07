@@ -1,9 +1,4 @@
-// =========================
-// FOTOS ONLINE
-// Reemplaza estas URLs por las tuyas
-// =========================
 const fotos = [
-    
     'https://res.cloudinary.com/dwvfqkfzp/image/upload/f_auto,q_auto/IMG_2177_x7pp5f',
     'https://res.cloudinary.com/dwvfqkfzp/image/upload/q_auto/f_auto/v1780109000/IMG_2189_awfhba.jpg',
     'https://res.cloudinary.com/dwvfqkfzp/image/upload/q_auto/f_auto/v1780109009/IMG_2212_vteyzm.jpg',
@@ -19,9 +14,6 @@ const fotos = [
     'https://res.cloudinary.com/dwvfqkfzp/image/upload/q_auto/f_auto/v1780109068/IMG_3230_cz3ugf.jpg',
 ];
 
-// =========================
-// CONFIGURACIÓN
-// =========================
 const VOLUMEN_MUSICA = 0.4;
 const TIEMPO_TRANSICION = 350;
 
@@ -42,14 +34,19 @@ let galeriaActiva = false;
 const musica = new Audio('cancion.mp3');
 musica.loop = true;
 musica.volume = VOLUMEN_MUSICA;
+musica.preload = 'auto';
 
-inicio.addEventListener('click', async () => {
+async function intentarReproducirMusica() {
     try {
         await musica.play();
+        console.log('Música reproduciéndose');
     } catch (e) {
         console.log('Audio bloqueado por el navegador hasta otra interacción.');
     }
+}
 
+inicio.addEventListener('click', async () => {
+    await intentarReproducirMusica();
     inicio.classList.remove('active');
     corazonContainer.classList.add('active');
     startHeartAnimation();
@@ -103,11 +100,15 @@ function showPhoto(index) {
             });
         };
 
+        fotoPrincipal.onerror = () => {
+            console.error('No se pudo cargar la imagen:', src);
+            animando = false;
+        };
+
         fotoPrincipal.src = src;
     }, TIEMPO_TRANSICION);
 }
 
-// Cambiar foto con click en cualquier parte
 galeria.addEventListener('click', () => {
     if (!galeriaActiva) return;
     currentPhotoIndex = (currentPhotoIndex + 1) % fotos.length;
