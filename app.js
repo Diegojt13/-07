@@ -15,7 +15,7 @@ const fotos = [
 ];
 // ⬆️⬆️⬆️ EDITA ARRIBA CON TUS ARCHIVOS ⬆️⬆️⬆️
 
-const CARPETA_FOTOS = 'fotos/';
+const CARPETA_FOTOS = ' ';
 const VOLUMEN_MUSICA = 0.4;
 
 const inicio = document.getElementById('inicio');
@@ -32,7 +32,7 @@ let scale = 0.2;
 let animando = false;
 let galeriaActiva = false;
 
-const musica = new Audio('musica/cancion.mp3');
+const musica = new Audio('cancion.mp3');
 musica.loop = true;
 musica.volume = VOLUMEN_MUSICA;
 
