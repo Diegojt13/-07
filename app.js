@@ -15,7 +15,7 @@ const fotos = [
 ];
 // ⬆️⬆️⬆️ EDITA ARRIBA CON TUS ARCHIVOS ⬆️⬆️⬆️
 
-const TIEMPO_FOTOS = 15000;
+const TIEMPO_FOTOS = 1000;
 const CARPETA_FOTOS = ' ';
 const VOLUMEN_MUSICA = 0.4;
 
