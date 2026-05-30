@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background: black;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+.screen {
+  display: none;
+  position: fixed;
+  inset: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.screen.active {
+  display: flex;
+}
+
+#inicio {
+  cursor: pointer;
+  text-align: center;
+  z-index: 100;
+}
+
+#inicio:hover {
+  opacity: 0.8;
+}
+
+#inicio h1 {
+  font-size: 3rem;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+#inicio p {
+  font-size: 1.5rem;
+  color: white;
+  opacity: 0.8;
+}
+
+#corazon-svg {
+  fill: white;
+  transform-origin: center;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+}
+
+#texto-amo {
+  position: absolute;
+  bottom: 15%;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+#galeria {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#fondo-borroso {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(40px) brightness(0.35);
+  transform: scale(1.2);
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.6));
+  z-index: 1;
+}
+
+#titulo-galeria {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  z-index: 3;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+#photo-wrapper {
+  position: relative;
+  z-index: 2;
+  width: min(90vw, 1100px);
+  height: min(75vh, 700px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#foto-principal {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#foto-principal.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+#foto-principal.hide {
+  opacity: 0;
+  transform: translateY(-18px) scale(0.98);
+}
+
+#mensaje-error {
+  display: none;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  z-index: 3;
+}
+
+#texto-amo1 {
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1.3rem;
+  z-index: 3;
+  font-weight: bold;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+

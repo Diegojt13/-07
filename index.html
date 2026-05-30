@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Ti Amor🤍</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <audio id="musica-fondo" src="musica/cancion.mp3" loop preload="auto"></audio>
+
+  <div id="inicio" class="screen active">
+    <h1>Para Ti Princesa🤍</h1>
+    <p>Haz click para entrar a mi corazon</p>
+  </div>
+
+  <div id="corazon-container" class="screen">
+    <svg id="corazon-svg" width="400" height="400" viewBox="0 0 100 100">
+      <path d="M50 85.5 C 20 65, 0 45, 25 25 A 15 15 0 0 1 50 30 A 15 15 0 0 1 75 25 C 100 45, 80 65, 50 85.5 Z"></path>
+    </svg>
+    <div id="texto-amo">Te Amo 🤍</div>
+  </div>
+
+  <div id="galeria" class="screen">
+    <div id="fondo-borroso"></div>
+    <div class="overlay"></div>
+
+    <div id="titulo-galeria">Nuestros Mejores Momentos 🤍</div>
+
+    <div id="photo-wrapper">
+      <img id="foto-principal" alt="Foto actual" />
+    </div>
+
+    <div id="mensaje-error">No hay fotos en la carpeta 😢</div>
+    <div id="indicador" class="indicador"></div>
+    <div id="texto-amo1">Te amo mi vida</div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
